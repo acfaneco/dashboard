@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './hooks/context/AuthProvider';
+import { ProductProvider } from './hooks/context/ProductProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <ProductProvider>
+        <App />
+      </ProductProvider>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
